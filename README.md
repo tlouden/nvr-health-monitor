@@ -75,6 +75,7 @@
     key = Fernet.generate_key()
     print(key.decode())
     # save this key as the environment variable ENCRYPTION_KEY
+    fernet = Fernet(key)
     encrypted_password = fernet.encrypt(b'password_goes_here')
     print(encrypted_password.decode())
     # put this value for password_encrypted
